@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitoraggio Qualità dell'Aria</title>
+    <title>Monitoraggio Qualità dell'Aria - Liceo Antonio Rosmini</title>
     <style>
-        /* Importazione del font Poppins */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
         /* Reset CSS */
         * {
             margin: 0;
@@ -15,155 +12,145 @@
             box-sizing: border-box;
         }
 
-        /* Stile di base */
-        body, html {
-            font-family: 'Poppins', sans-serif;
-            height: 100%;
-            overflow: hidden;
-            color: white;
+        /* Corpo della pagina */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            line-height: 1.6;
         }
 
-        /* Video di sfondo */
-        .background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        /* Contenitore principale */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
+        /* Intestazione */
+        header {
+            background: #000;
             padding: 20px;
-            color: white;
+            text-align: center;
         }
 
-        /* Titolo */
-        .title {
-            font-size: 48px;
-            font-weight: bold;
+        header h1 {
+            font-size: 2.5em;
             text-transform: uppercase;
-            margin-bottom: 10px;
-            color: black; /* Colore del titolo cambiato a nero */
         }
 
-        .subtitle {
-            font-size: 24px;
-            text-transform: uppercase;
-            margin-bottom: 40px;
+        /* Sezione principale */
+        .main-section {
+            text-align: center;
+            padding: 50px 20px;
         }
 
-        /* Sezione valori sensori */
-        .sensor-values {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
+        .main-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .main-section p {
+            font-size: 1.2em;
             margin-bottom: 30px;
         }
 
-        /* Card sensori */
-        .card {
-            width: 220px;
-            height: 200px;
-            background-color: rgba(0, 0, 0, 0.7); /* Sfondo semitrasparente per migliorare la visibilità con il video */
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            color: #39cb69;
+        /* Sezione dati */
+        .data-section {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-            transition: transform 0.3s ease;
+            justify-content: space-around;
+            padding: 20px;
+            background: #333;
         }
 
-        .card:hover {
-            transform: scale(1.05); /* Effetto di ingrandimento al passaggio del mouse */
+        .data-card {
+            background: #444;
+            padding: 20px;
+            border-radius: 10px;
+            width: 20%;
+            text-align: center;
         }
 
-        .label {
-            font-size: 20px;
-            color: white;
-            font-weight: bold;
+        .data-card h3 {
+            font-size: 1.5em;
             margin-bottom: 10px;
-            text-transform: uppercase;
         }
 
-        .value {
-            font-size: 50px;
-            color: #39cb69;
-            font-weight: bold;
+        .data-card p {
+            font-size: 1.2em;
         }
 
-        .unit {
-            font-size: 16px;
-            color: #39cb69;
+        /* Sezione spiegazioni */
+        .explanation-section {
+            padding: 20px;
+            background: #222;
         }
 
-        /* Barre verdi laterali */
-        .card::before, .card::after {
-            content: "";
-            position: absolute;
-            top: 20%;
-            bottom: 20%;
-            width: 4px;
-            background-color: #39cb69;
+        .explanation-section h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
         }
 
-        .card::before {
-            left: -10px;
+        .explanation-section ul {
+            list-style-type: none;
         }
 
-        .card::after {
-            right: -10px;
+        .explanation-section li {
+            margin-bottom: 10px;
         }
 
+        /* Footer */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
     </style>
 </head>
 <body>
-    <!-- Video di sfondo -->
-    <video class="background-video" autoplay muted loop>
-        <source src="3c3948e6db.mp4" type="video/mp4">
-        Il tuo browser non supporta il tag video.
-    </video>
+    <!-- Intestazione -->
+    <header>
+        <h1>Monitoraggio Qualità dell'Aria</h1>
+        <p>Liceo Antonio Rosmini</p>
+    </header>
 
-    <!-- Contenitore principale -->
-    <div class="container">
-        <div class="title">Monitoraggio Qualità dell'Aria</div>
-        <div class="subtitle">Liceo Antonio Rosmini</div>
+    <!-- Sezione principale -->
+    <section class="main-section">
+        <h2>Benvenuti nel Sistema di Monitoraggio della Qualità dell'Aria</h2>
+        <p>Monitoriamo in tempo reale i livelli di ETAN, VOC, CO e NO₂ per garantire un ambiente sano per i nostri studenti e il personale.</p>
+    </section>
 
-        <!-- Sezione valori sensori -->
-        <div class="sensor-values">
-            <div class="card">
-                <div class="label">CO</div>
-                <div class="value">298</div>
-                <div class="unit">PPM</div>
-            </div>
-            <div class="card">
-                <div class="label">VOC</div>
-                <div class="value">588</div>
-                <div class="unit">PPM</div>
-            </div>
-            <div class="card">
-                <div class="label">ETAN</div>
-                <div class="value">988</div>
-                <div class="unit">PPM</div>
-            </div>
-            <div class="card">
-                <div class="label">NO2</div>
-                <div class="value">988</div>
-                <div class="unit">PPM</div>
-            </div>
+    <!-- Sezione dati -->
+    <section class="data-section">
+        <div class="data-card">
+            <h3>ETAN</h3>
+            <p>Livello attuale: 0.5 ppm</p>
         </div>
-    </div>
+        <div class="data-card">
+            <h3>VOC</h3>
+            <p>Livello attuale: 0.3 ppm</p>
+        </div>
+        <div class="data-card">
+            <h3>CO</h3>
+            <p>Livello attuale: 0.1 ppm</p>
+        </div>
+        <div class="data-card">
+            <h3>NO₂</h3>
+            <p>Livello attuale: 0.2 ppm</p>
+        </div>
+    </section>
+
+    <!-- Sezione spiegazioni -->
+    <section class="explanation-section">
+        <h3>Spiegazione dei Gas Monitorati</h3>
+        <ul>
+            <li><strong>ETAN (Etanolo):</strong> Un alcol utilizzato in vari processi industriali e come combustibile. Livelli elevati possono indicare la presenza di solventi o combustione incompleta.</li>
+            <li><strong>VOC (Composti Organici Volatili):</strong> Sostanze chimiche che evaporano facilmente nell'aria. Possono provenire da vernici, solventi e altri prodotti chimici. L'esposizione prolungata può avere effetti sulla salute.</li>
+            <li><strong>CO (Monossido di Carbonio):</strong> Gas incolore e inodore prodotto dalla combustione incompleta di combustibili. È pericoloso in ambienti chiusi e può essere letale in alte concentrazioni.</li>
+            <li><strong>NO₂ (Diossido di Azoto):</strong> Gas prodotto dalla combustione di carburanti fossili. Contribuisce all'inquinamento atmosferico e può causare problemi respiratori.</li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Liceo Antonio Rosmini - Tutti i diritti riservati</p>
+    </footer>
 </body>
 </html>
